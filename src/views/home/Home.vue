@@ -19,14 +19,16 @@ export default {
 
   data() {
       return {
-        result: null
+        banner: [],
+        recommend: []
       }
     },
 
     created() {
       getHomeMultidata().then(res => {
         console.log(res);
-        this.result = res
+        this.banner = res.data.banner
+        this.recommend = res.data.recommend
       })
     },
 }
