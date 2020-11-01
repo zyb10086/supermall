@@ -12,9 +12,12 @@ import {getHomeMultidata} from 'network/home'
 
 export default {
   name: 'Home',
+
   components: {
     NavBar,
-    data() {
+  },
+
+  data() {
       return {
         result: null
       }
@@ -26,7 +29,6 @@ export default {
         this.result = res
       })
     },
-  }
 }
 </script>
 
