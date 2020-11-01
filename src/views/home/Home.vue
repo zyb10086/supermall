@@ -8,11 +8,24 @@
 
 <script>
 import NavBar from 'common/navbar/NavBar'
+import {getHomeMultidata} from 'network/home'
 
 export default {
   name: 'Home',
   components: {
-    NavBar
+    NavBar,
+    data() {
+      return {
+        result: null
+      }
+    },
+
+    created() {
+      getHomeMultidata().then(res => {
+        console.log(res);
+        this.result = res
+      })
+    },
   }
 }
 </script>
@@ -20,5 +33,6 @@ export default {
 <style scoped>
   .home-nav {
     background-color: var(--color-tint);
+    color: #fff;
   }
 </style>
